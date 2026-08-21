@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Experiment outputs
+results/checkpoints/*.pt
+results/checkpoints/*.pth
+results/checkpoints/*.ckpt
+results/checkpoints/*.safetensors
+results/runs/
+
+# Local/generated data
+data/raw/
+data/processed/
+*.npz
+*.npy
+*.h5
+*.hdf5
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
