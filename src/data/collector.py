@@ -95,6 +95,7 @@ def collect_trajectories(
         env = make_env(env_id=env_id, visual=True)
         try:
             observation, _ = env.reset(seed=seed)
+            env.action_space.seed(seed)
 
             for timestep in range(max_steps):
                 action = int(env.action_space.sample())
@@ -115,6 +116,9 @@ def collect_trajectories(
                     break
         finally:
             env.close()
+
+    if not observations:
+        raise RuntimeError("No transitions were collected")
 
     return TrajectoryDataset(
         observations=np.stack(observations),
