@@ -1,0 +1,19 @@
+seed: 42
+
+environment:
+  name: MiniGrid-Empty-5x5-v0
+  train_seeds: [1, 800]
+  val_seeds: [801, 900]
+  test_seeds: [901, 1000]
+
+model:
+  latent_dim: 128
+
+training:
+  batch_size: 64
+  learning_rate: 0.001
+  epochs: 20
+
+paths:
+  results: results/
+  checkpoints: results/checkpoints/
