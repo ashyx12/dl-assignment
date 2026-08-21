@@ -51,14 +51,19 @@ model-predictive planning
 - `src/visualization/` — prediction and experiment visualizations
 - `configs/` — reproducible experiment configurations
 - `experiments/` — exploratory notebooks and experiment entry points
+- `experiments/kaggle/` — Kaggle-specific workflow documentation
 - `scripts/` — command-line experiment utilities
 - `results/` — tracked figures/tables; large checkpoints stay out of normal Git history
 - `demo/` — eventual interactive visualization
 - `tests/` — automated checks
 
-## Development principle
+## Compute workflow
 
-GitHub is the source of truth. Colab is compute only. Every meaningful milestone should produce a Git commit and reproducible configuration/results.
+**GitHub is the source of truth. Kaggle is the compute environment.**
+
+The reusable project code lives in GitHub. Kaggle notebooks are used for GPU execution, experiment orchestration, visualization, and notebook-level analysis. We do not depend on a persistent Colab filesystem or repeatedly copy the project into a notebook.
+
+See [`experiments/kaggle/README.md`](experiments/kaggle/README.md) for the workflow and artifact policy.
 
 ## Checkpoints
 
